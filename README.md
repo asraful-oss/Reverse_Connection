@@ -12,7 +12,7 @@
 
 ***
 
-## 👾 Malwares & Connection Guidelines
+## 👾 Reverse_Connection Guidelines
 **Attacker should change its ip address in client.py before put it in victim pc** 📍
 
 **You can use ngrok , pinggy etc if victim is outside local network** 📶
