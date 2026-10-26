@@ -1,12 +1,12 @@
 <details>
-  <summary><b>✨ New version-7.2</b></summary>
+  <summary><b>✨ New version-7.3</b></summary>
   <br>
   
 > **New Features: upex , it can upload program/script and execute them** 🌐
 
 > **Read `UPEX-feature.md` for more**
 
-> **and so on**
+> **Some bugs fixed and so on**
 
 </details>
 
