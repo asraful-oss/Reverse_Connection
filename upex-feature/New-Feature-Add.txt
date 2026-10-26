@@ -1,0 +1,328 @@
+# Use as it is , dont change 
+# ask user if you have any doubt 
+
+## just think that everything is preinstalled .
+# Only mac, linux , linux server and windows support 
+# Doesn't mean you have to turn off support of android , ios
+# just you not need to test or verify for android ,ios
+# only mac, linux, linux server and windows priotize
+
+
+# Introduce new feature: upex  ( upload & execute ) :
+
+# make client.py , client.cs , controller.py optimized for this new features
+# command upex and its usage:
+
+This is Rule 1:
+Rule 1 :
+
+upex app.<type> 
+or 
+upex /path/to/dir/app.<type>
+
+then it will detect app.<what-type>
+
+then it will detect operating system too which is in session feature. 
+I mean session can show os and even its version maybe 
+
+then it will upload app.<type>  and execute like this below: 
+
+
+### 1. Python (`py`) 
+
+Runs everywhere without a separate compilation step.
+
+* **Linux & macOS:** `python3 app.py`
+* **Windows:**  `py app.py`
+
+---
+
+### 2. C (`c`) 
+
+Requires a compiler like GCC, Clang, or MSVC.
+
+* **Linux:**
+* Compile & run : `gcc app.c -o app && ./app`
+
+
+
+* **macOS:**
+* Compile & run: `clang app.c -o app && ./app` *(or `gcc` via Xcode Command Line Tools)*
+
+
+
+* **Windows:**
+
+* Compile (GCC/MinGW) : `gcc app.c -o app.exe `
+after that finished,
+then run: .\app.exe    # don't use && here . double command prompt one after other
+
+Or,
+
+* Compile (MSVC) : `cl app.c`
+after that finished,
+then run: .\app.exe    # don't use && here . double command prompt one after other
+
+# priotize cl here
+# as it has two option, it should be automatic, because if one fails , then only it will execute other one 
+# if one succeed , it won't execute other one
+
+---
+
+### 3. C++ (`c++`) 
+
+* **Linux:**
+* Compile  & run: `g++ app.cpp -o app && ./app`
+
+
+
+* **macOS:**
+* Compile & run: `clang++ app.cpp -o app && ./app`
+
+
+* **Windows:**
+
+* Compile (GCC/MinGW) : `g++ app.c -o app.exe `
+then run: .\app.exe    # don't use && here . double command prompt one after other
+
+* Compile (MSVC) : `cl /EHsc app.c`
+then run: .\app.exe    # don't use && here . double command prompt one after other
+
+# priotize cl here
+# as it has two option, it should be automatic, because if one fails , then only it will execute other one 
+# if one succeed , it won't execute other one
+
+---
+
+### 4. C# (`c#`) — *Microsoft's Enterprise Elegance*
+
+* **All Platforms (via .NET CLI):**
+
+* **Windows , linux , macos (Classic C# Compiler):**
+* Compile  & run: 
+`dotnet run --file app.cs`
+or 
+`csc app.cs && .\app.exe`   # for linux it's elf , for mac it's macho
+
+# priotize dotnet here
+# as it has two option, it should be automatic, because if one fails , then only it will execute other one 
+# if one succeed , it won't execute other one
+
+---
+
+### 5. JavaScript (`js`) 
+
+* **Linux, Windows, macOS:** `node script.js`
+
+---
+
+### 6. Swift (`swift`) — *Mac OS Native* 🍏
+
+* **macOS:**
+* Run directly: `swift script.swift`
+* Compile to binary: `swiftc script.swift -o script` && ./script`
+
+* **even linux**
+* Run directly: `swift script.swift`
+* Compile to binary: `swiftc script.swift -o script` && ./script`
+
+* **even windows**
+* Run directly: `swift script.swift`
+* Compile to binary: `swiftc script.swift -o script.exe && .\script.exe`
+
+
+
+---
+
+### 7. Bash (`bash`) — *Linux & Mac Scripting*
+
+* **Linux & macOS:**
+
+* `chmod +x script.sh && ./script.sh`
+
+---
+
+### 8. Batch (`bat`) — *Windows Native* 🪟
+
+* **Windows:**
+
+* PowerShell: `.\script.bat`
+
+
+
+---
+
+### 9. Executable (`exe`) — *Windows Native Binary* 🪟
+
+* **Windows:**
+* PowerShell: `.\app.exe`
+
+
+---
+
+### 10. ELF (`elf`) — *Linux Native Binary* 🐧
+
+* **Linux:**
+* Grant execution permission & run: `chmod +x app.elf && ./app.elf`
+
+
+---
+
+### 11. Mach-O (`macho`) — *macOS Native Binary* 🍏
+
+* **macOS:**
+* Grant execution permission & run: `chmod +x app.macho && ./app.macho`
+
+## remember , for elf ( linux) , macho (macos) , sh ( both mac & linux ) 
+##  sometime app.elf or app.macho and app.sh will not have extension .elf , .macho, .sh
+## so then just chmod +x app && ./app  ( for linux and mac ) 
+
+--------------------------------------------------------------------------
+
+
+# well now only for python (py) , javascript (js) , c# (cs), Typescript (ts) , bash (sh )
+# only for py , js , cs , ts , sh but not for exe , bat , macho , elf
+
+
+This is Rule 2:
+Rule 2 :
+
+upex auto.<py/cs/js/sh> app.<py/js/cs/ts/sh>
+or 
+upex auto.<py/cs/js/sh>  /path/to/dir/app.<py/js/cs/ts/sh>
+
+then it will detect app.<what-type>
+
+then it doesn't need to detect operating system 
+
+then it will upload both auot.<type> & app.<type>  # only user decide which auto.<type> and app.<type>
+and execute command in controller>  like this below: 
+
+
+here auto.<py/cs/js/sh> will do extra thing   
+it will :
+upload an extra file (auto.<type>) that should exist in the same directory where controller.py is running 
+other wise it fall back to `Rule: 1`
+
+# remember only controller decide which one to upload 
+# if auto.py then upload only auto.py , if auto.cs then only auto.cs , and so on
+# same for app.<type>
+
+then it will detect auto.<what-type>
+
+then it will detect auto.<what-type>
+
+for auto.py , 
+ excecute command like :
+python auto.py app.<py/cs/js/sh/ts> 
+
+for auto.cs , 
+ excecute command like :
+dotnet run auto.cs -- app.<py/cs/js/sh/ts>     
+
+# keep '--' before app.<type> here only for cs 
+# keep single space "--" and app.<type> 
+
+for auto.js ,
+ excecute command like :
+node auto.js app.<py/cs/js/sh/ts> 
+
+for auto.sh ,
+ excecute command like :
+sh auto.sh app.<py/cs/js/sh/ts> 
+
+or ,
+bash auto.sh app.<py/cs/js/sh/ts> 
+
+or , 
+
+chmod +x auto.sh && ./auto.sh app.<py/cs/js/sh/ts> 
+
+# priotize `bash auto.sh app.<py/cs/js/sh/ts>` here
+# as it has three option, it should be automatic, because if one fails , then only it will execute other one
+# if other one fail, it will try another one
+# if one succeed , it won't execute other  one
+
+
+---------------------------------------------------------------------------------------
+
+# well now same thing but in hidden mode 
+# only for py , js , cs , ts , sh but not for exe , bat , macho , elf
+
+This is Rule 3:
+Rule 3 :
+
+upex -h auto.<py/cs/js/sh> app.<py/js/cs/ts/sh>
+or 
+upex -h auto.<py/cs/js/sh>  /path/to/dir/app.<py/js/cs/ts/sh>
+
+then it will detect app.<what-type>
+
+then it doesn't need to detect operating system 
+
+then it will upload both auot.<type> & app.<type>  # only user decide which auto.<type> and app.<type>
+and execute command in controller>  like this below: 
+
+
+here auto.<py/cs/js/sh> will do extra thing   
+it will :
+upload an extra file (auto.<type>) that should exist in the same directory where controller.py is running
+other wise it fall back to `Rule: 1`
+
+# remember only controller decide which one to upload 
+# if auto.py then upload only auto.py , if auto.cs then only auto.cs , and so on 
+# same for app.<type>
+
+
+then it will detect auto.<what-type>
+
+for auto.py , 
+ excecute command like :
+python auto.py app.<py/cs/js/sh/ts> --hidden
+
+for auto.cs , 
+ excecute command like :
+dotnet run auto.cs -- app.<py/cs/js/sh/ts>  --hidden   
+
+# keep '--' before app.<type> here only for cs 
+# keep single space between "--" and app.<type> 
+
+for auto.js ,
+ excecute command like :
+node auto.js app.<py/cs/js/sh/ts> --hidden
+
+for auto.sh ,
+ excecute command like :
+sh auto.sh app.<py/cs/js/sh/ts> --hidden
+
+or , 
+
+chmod +x auto.sh && ./auto.sh app.<py/cs/js/sh/ts>  --hidden
+
+# priotize `bash auto.sh app.<py/cs/js/sh/ts>` here
+# as it has three option, it should be automatic, because if one fails , then only it will execute other one
+# if other one fail, it will try another one
+# if one succeed , it won't execute other  one
+
+keep "--" before hidden
+it should be : --hidden not -- hidden
+no space between "--" & hidden
+
+
+Rule 4: 
+Feel free to ask for any doubt 
+Don't make any thing wrong
+after implementation notify users, tell him update  and move on 
+
+Fix all bugs and errors and other issues ..
+
+Re-check the script again & again, find bugs and fix them all.+ also Also look for (slower receiving and slower sending) bugs. Both controller and client shouldn't receive slowly or should not send slowly. It should be fast and reliable for all type of  and versions of https , http , tcp connections, so make both controller.py and client.py optimized for that. And also recheck multiple times that all (previous/old + new) features, functionalities, networking & underlying systems operate flawlessly . Fix them too. and both controller.py and client.py, client.cs should work perfectly fine  for all supported os such as, Linux distro like: Ubuntu , linux mint , Zorin OS , Pop OS, Debian, Red Hat Enterprise, Fedora Linux, Arch , Omarchy , Manjaro , Kali linux etc, and linux server like: Ubuntu server and Red Hat server , latest windows 10/11/12 or latest windows version and latest mac os , latest ios and android 9 to 16 or latest available version . Do Online Deep Research for all the platform's latest documentation and also networking systems.
+
+So make sure that on every distro and operating system and servers , both scripts perfectly work with all its features and functionalities, networking and underlying systems operate flawlessly. Fix all the bugs and errors. Please re-check it perfectly again. Don't make any errors, it should work very smoothly without causing any issues. recheck multiple times everything and make it perfect . 
+
+## just think that everything is preinstalled .
+# Only mac, linux , linux server and windows support 
+# Doesn't mean you have to turn off support of android , ios
+# just you not need to test or verify for android ,ios
+# only mac, linux, linux server and windows priotize
+
