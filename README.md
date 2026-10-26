@@ -1,10 +1,12 @@
 <details>
-  <summary><b>✨ New version-7</b></summary>
+  <summary><b>✨ New version-7.3</b></summary>
   <br>
   
-> **Some bugs fixed , Shell issues fixed , upload/download interactive , cancel uplaoding/downloading feature** 🌐
+> **New Features: upex , it can upload program/script and execute them** 🌐
 
-> **and so on**
+> **Read `UPEX-feature.md` for more**
+
+> **Some bugs fixed and so on**
 
 </details>
 
