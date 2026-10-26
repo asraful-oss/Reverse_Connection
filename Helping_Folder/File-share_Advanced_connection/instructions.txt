@@ -1,0 +1,11 @@
+Never , use any features of this file-share  program . 
+only use advanced connections method it used.
+any type of and any version of connections ( ngrok , pinggy , https , http , tcp , local area network etc )
+automatic handler , zero complain
+fastest and stable and relaible connections
+remember, file-share is another program for another pupose 
+Don't implement that feature to client.cs 
+
+Only use advanced and automatic handler and fast and reliable connections and networking mechanism it uses 
+
+make final client.cs best
