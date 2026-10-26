@@ -3,6 +3,11 @@
 ```bash
 dotnet run auto.cs -- client.cs --hidden 
 ```
+or , 
+
+```bash
+dotnet run --file auto.cs -- client.cs --hidden 
+```
 
 ## For Mac & Linux: 
 
