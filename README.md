@@ -1,18 +1,20 @@
 <details>
-  <summary><b>✨ New version-7.3</b></summary>
+  <summary><b>✨ New version-7.5</b></summary>
   <br>
   
-> **New Features: upex , it can upload program/script and execute them** 🌐
+> **upex got new updated , it can upload program/script and execute them** 🌐
 
 > **Read `UPEX-feature.md` for more**
 
-> **Some bugs fixed and so on**
+> **More bugs fixed and so on**
+
+> **If you find issues, jump back to previous one**
 
 </details>
 
 ***
 
-## 👾 Reverse_Connection Guidelines
+## 👾 Malwares & Connection Guidelines
 **Attacker should change its ip address in client.py before put it in victim pc** 📍
 
 **You can use ngrok , pinggy etc if victim is outside local network** 📶
