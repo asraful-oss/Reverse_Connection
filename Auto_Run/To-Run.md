@@ -15,11 +15,12 @@ dotnet run --file auto.cs -- client.cs --hidden
 sh auto.sh  client.js --hidden 
 ```
 
-**Note: auto.js should be in same directory where auto.sh and client.js located**
+**Note: auto.sh no longer need extra auto.js, it can generate auto.js**
 
 ## For Linux: 
 
 ```bash
 python auto.py  client.py --hidden 
 ```
+
 

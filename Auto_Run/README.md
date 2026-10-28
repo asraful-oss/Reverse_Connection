@@ -7,6 +7,8 @@ auto.js  myprogram.py  --hidden      # or .js .ts .cs .sh — one command for al
 auto.cs  myprogram.py  --hidden
 ```
 
+**Note: auto.sh no longer need extra auto.js, it can generate auto.js**
+
 That's it. The script now starts on every reboot, shutdown + power-on, and re-login, silently in the background.
 
 ### ✨ What makes them "just work"
